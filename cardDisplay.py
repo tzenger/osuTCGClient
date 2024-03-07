@@ -162,29 +162,29 @@ blankB = LoadCardImage("blankBlue.png", -1)
 blankR = LoadCardImage("blankRed.png", -1)
 
 
-cardA1 = Label(display, image = blankB)
-cardA2 = Label(display, image = blankB)
-cardA3 = Label(display, image = blankB)
-cardA4 = Label(display, image = blankB)
-cardA5 = Label(display, image = blankB)
+cardA1 = Label(display, image = blankR)
+cardA2 = Label(display, image = blankR)
+cardA3 = Label(display, image = blankR)
+cardA4 = Label(display, image = blankR)
+cardA5 = Label(display, image = blankR)
 
-cardB1 = Label(display, image = blankR)
-cardB2 = Label(display, image = blankR)
-cardB3 = Label(display, image = blankR)
-cardB4 = Label(display, image = blankR)
-cardB5 = Label(display, image = blankR)
+cardB1 = Label(display, image = blankB)
+cardB2 = Label(display, image = blankB)
+cardB3 = Label(display, image = blankB)
+cardB4 = Label(display, image = blankB)
+cardB5 = Label(display, image = blankB)
 
-cardA1.image = blankB
-cardA2.image = blankB
-cardA3.image = blankB
-cardA4.image = blankB
-cardA5.image = blankB
+cardA1.image = blankR
+cardA2.image = blankR
+cardA3.image = blankR
+cardA4.image = blankR
+cardA5.image = blankR
 
-cardB1.image = blankR
-cardB2.image = blankR
-cardB3.image = blankR
-cardB4.image = blankR
-cardB5.image = blankR
+cardB1.image = blankB
+cardB2.image = blankB
+cardB3.image = blankB
+cardB4.image = blankB
+cardB5.image = blankB
 
 cardA1.place(x=30, y=10)
 cardA2.place(x=210, y=10)
