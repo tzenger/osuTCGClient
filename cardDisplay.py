@@ -398,9 +398,9 @@ def cardPlace(event, opponent, cardNumber, cardPattern):
                     
     if name == "(empty)":
         if opponent == 0:
-            card = LoadCardImage("blankBlue.png", -1)
-        else:
             card = LoadCardImage("blankRed.png", -1)
+        else:
+            card = LoadCardImage("blankBlue.png", -1)
     else:
         # print(processCardPattern(cardPattern))
         card = LoadCardImage(name + ".png", processCardPattern(cardPattern))
