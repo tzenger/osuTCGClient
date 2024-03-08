@@ -1,9 +1,9 @@
 # osuTCGClient
 A barebones client to help facilitate osuTCG matches and gameplay including pack roller and card display
 
-![](osuTCGClient/images/carddisplay.png)
+![](images/carddisplay.png)
 
-![](osuTCGClient/images/packroller.png)
+![](images/packroller.png)
 
 # Download
 https://github.com/tzenger/osuTCGClient/releases/tag/Releases
