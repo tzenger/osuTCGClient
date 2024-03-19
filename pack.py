@@ -3,9 +3,9 @@ import random
 global common
 global uncommon
 global rare
-common = {"GamingChair", "HigherScore", "RobStare", "BrainPower", "Swag", "Bide", "Stonks", "AscensionToHeaven", "Cultist", "ChangeOfPlans", "MikuBuff", "EcoRound", "HandOfAcillac", "JazzIsRad", "ChungisIsServed", "MasterOfLightning", "ComebackKid"}
-uncommon = {"Jester", "BossRush", "Safeguard", "Vanilla", "DifficultyAdjust", "Powerball", "Mirror", "RedPill", "SolarSystem", "TheIdiotStick", "Maestro", "ArtAppreciation", "Heist"}
-rare = {"PointBottle", "TrickHand", "Equality", "TheSeer", "3636PakaPesos", "Psuedohost", "BluePill", "SaucedSpirit", "AlchemicalForge", "Smuggler"}
+common = {"GamingChair", "HigherScore", "RobStare", "BrainPower", "Swag", "Bide", "Stonks", "AscensionToHeaven", "Cultist", "ChangeOfPlans", "MikuBuff", "EcoRound", "HandOfAcillac", "JazzIsRad", "ChungisIsServed", "MasterOfLightning", "ComebackKid", "CaffeinePill"}
+uncommon = {"Jester", "BossRush", "Safeguard", "Vanilla", "DifficultyAdjust", "Powerball", "Mirror", "RedPill", "SolarSystem", "TheIdiotStick", "Maestro", "ArtAppreciation", "Heist", "Endgame", "Chaos"}
+rare = {"PointBottle", "TrickHand", "Equality", "TheSeer", "3636PakaPesos", "Psuedohost", "BluePill", "SaucedSpirit", "AlchemicalForge", "Smuggler", "DomainExpansion"}
 
 
 # NOT USING THIS CLASS
