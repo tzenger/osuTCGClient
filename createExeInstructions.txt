@@ -1,0 +1,6 @@
+MUST HAVE PYINSTALLER INSTALLED
+
+Open Windows PowerShell
+Replace with filename
+Paste into PowerShell
+pyinstaller -c -F "file here"
