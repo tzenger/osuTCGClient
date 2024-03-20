@@ -114,44 +114,46 @@ countB3 = IntVar()
 countB4 = IntVar()
 countB5 = IntVar()
 
+maxSpinboxValue = 99
+
 # spinboxes
-spA1 = Spinbox(root, from_= 0, to = 20, width = 3, wrap = True)
+spA1 = Spinbox(root, from_= 0, to = maxSpinboxValue, width = 3, wrap = True)
 spA1.configure(command= lambda : spinbox_callback(0, 0, spA1.get()))
 spA1.place(x=250, y=30)
 
-spA2 = Spinbox(root, from_= 0, to = 20, width = 3, wrap = True)
+spA2 = Spinbox(root, from_= 0, to = maxSpinboxValue, width = 3, wrap = True)
 spA2.configure(command= lambda : spinbox_callback(0, 1, spA2.get()))
 spA2.place(x=250, y=50)
 
-spA3 = Spinbox(root, from_= 0, to = 20, width = 3, wrap = True)
+spA3 = Spinbox(root, from_= 0, to = maxSpinboxValue, width = 3, wrap = True)
 spA3.configure(command= lambda : spinbox_callback(0, 2, spA3.get()))
 spA3.place(x=250, y=70)
 
-spA4 = Spinbox(root, from_= 0, to = 20, width = 3, wrap = True)
+spA4 = Spinbox(root, from_= 0, to = maxSpinboxValue, width = 3, wrap = True)
 spA4.configure(command= lambda : spinbox_callback(0, 3, spA4.get()))
 spA4.place(x=250, y=90)
 
-spA5 = Spinbox(root, from_= 0, to = 20, width = 3, wrap = True)
+spA5 = Spinbox(root, from_= 0, to = maxSpinboxValue, width = 3, wrap = True)
 spA5.configure(command= lambda : spinbox_callback(0, 4, spA5.get()))
 spA5.place(x=250, y=110)
 
-spB1 = Spinbox(root, from_= 0, to = 20, width = 3, wrap = True)
+spB1 = Spinbox(root, from_= 0, to = maxSpinboxValue, width = 3, wrap = True)
 spB1.configure(command= lambda : spinbox_callback(1, 0, spB1.get()))
 spB1.place(x=540, y=30)
 
-spB2 = Spinbox(root, from_= 0, to = 20, width = 3, wrap = True)
+spB2 = Spinbox(root, from_= 0, to = maxSpinboxValue, width = 3, wrap = True)
 spB2.configure(command= lambda : spinbox_callback(1, 1, spB2.get()))
 spB2.place(x=540, y=50)
 
-spB3 = Spinbox(root, from_= 0, to = 20, width = 3, wrap = True)
+spB3 = Spinbox(root, from_= 0, to = maxSpinboxValue, width = 3, wrap = True)
 spB3.configure(command= lambda : spinbox_callback(1, 2, spB3.get()))
 spB3.place(x=540, y=70)
 
-spB4 = Spinbox(root, from_= 0, to = 20, width = 3, wrap = True)
+spB4 = Spinbox(root, from_= 0, to = maxSpinboxValue, width = 3, wrap = True)
 spB4.configure(command= lambda : spinbox_callback(1, 3, spB4.get()))
 spB4.place(x=540, y=90)
 
-spB5 = Spinbox(root, from_= 0, to = 20, width = 3, wrap = True)
+spB5 = Spinbox(root, from_= 0, to = maxSpinboxValue, width = 3, wrap = True)
 spB5.configure(command= lambda : spinbox_callback(1, 4, spB5.get()))
 spB5.place(x=540, y=110)
 

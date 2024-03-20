@@ -3,6 +3,12 @@ from pack import *
 from tkinter import *
 from PIL import Image, ImageTk
 
+from sfx import *
+from random import shuffle
+from threading import Timer
+
+
+
 # Create root window
 root = Tk()
 
@@ -57,10 +63,60 @@ card3.place(x=540, y=100)
 card4.place(x=750, y=100)
 card5.place(x=960, y=100)
 
+# Randomizer Loop
+counter = 0
+continueLoop = 1
+
+def display(rollType):
+    t = Timer(5.40, endLoop)
+    t.start()
+    loop(rollType)
+
+def endLoop():
+    global continueLoop
+    continueLoop = 0
+
+def loop(rollType):
+    global counter
+    global continueLoop
+    if counter == 0:
+        randomizeSound()
+        root.after(1596)
+    counter += 1
+
+    # Run specific pack roll for rollType
+    match rollType:
+        case 0:
+            Mini(0)
+        case 1:
+            Jumbo(0)
+        case 2:
+            Mega()
+        case 3:
+            Mini(1)
+        case 4:
+            Jumbo(1)
+        case 5:
+            Mini(2)
+        case 6:
+            Jumbo(2)
+        case 7:
+            Single()
+
+    if continueLoop == 0:
+        counter = 0
+        continueLoop = 1
+        winningSound()
+        return
+
+    root.after(50, lambda: loop(rollType))
+
+
+
 # Rolls a Mini Pack and displays the result
 def Mini(wins):
     x = rollMiniPack(wins)
-    y = "Number of times you have rolled Mini Pack: Too Many"
+    y = "Good Luck!"
     lbl.configure(text=y)
 
     one = LoadCardImage("blank.png", -1)
@@ -93,7 +149,7 @@ def Mini(wins):
 # Rolls a Jumbo Pack and displays the result
 def Jumbo(wins):
     x = rollJumboPack(wins)
-    y = "Number of times you have rolled Jumbo Pack: Too Many"
+    y = "Good Luck!"
     
     one = LoadCardImage(x[0][0], x[0][2])
     two = LoadCardImage(x[1][0], x[1][2])
@@ -127,7 +183,7 @@ def Jumbo(wins):
 # Rolls a Mega Pack and displays the result
 def Mega():
     x = rollMegaPack()
-    y = "Number of times you have rolled Mega Pack: Too Many"
+    y = "Good Luck!"
 
     one = LoadCardImage(x[0][0], x[0][2])
     two = LoadCardImage(x[1][0], x[1][2])
@@ -159,10 +215,10 @@ def Mega():
     card5.place(x=960, y=100)
 
 
-# Rolls a Mini Pack and displays the result
+# Rolls a Single card and displays the result
 def Single():
     x = rollJumboPack(0)
-    y = "Number of times you have rolled Mini Pack: Too Many"
+    y = "Good Luck!"
     lbl.configure(text=y)
 
     one = LoadCardImage("blank.png", -1)
@@ -194,14 +250,14 @@ def Single():
 
 
 # Create buttons for each pack type
-btn1 = Button(root, text="Mini Pack", fg="green", command=lambda: Mini(0), height=2, width=25)
-btn2 = Button(root, text="Jumbo Pack", fg="blue", command=lambda: Jumbo(0), height=2, width=25)
-btn3 = Button(root, text="Mega Pack", fg="red", command=Mega, height=2, width=25)
-btn1A = Button(root, text="Mini Pack (1 Win)", fg="green", command=lambda: Mini(1), height=2, width=25)
-btn2A = Button(root, text="Jumbo Pack (1 Win)", fg="blue", command=lambda: Jumbo(1), height=2, width=25)
-btn1B = Button(root, text="Mini Pack (2 Wins)", fg="green", command=lambda: Mini(2), height=2, width=25)
-btn2B = Button(root, text="Jumbo Pack (2 Wins)", fg="blue", command=lambda: Jumbo(2), height=2, width=25)
-btn4 = Button(root, text="Single Card", fg="black", command=Single, height=2, width=25)
+btn1 = Button(root, text="Mini Pack", fg="green", command=lambda: display(0), height=2, width=25)
+btn2 = Button(root, text="Jumbo Pack", fg="blue", command=lambda: display(1), height=2, width=25)
+btn3 = Button(root, text="Mega Pack", fg="red", command=lambda: display(2), height=2, width=25)
+btn1A = Button(root, text="Mini Pack (1 Win)", fg="green", command=lambda: display(3), height=2, width=25)
+btn2A = Button(root, text="Jumbo Pack (1 Win)", fg="blue", command=lambda: display(4), height=2, width=25)
+btn1B = Button(root, text="Mini Pack (2 Wins)", fg="green", command=lambda: display(5), height=2, width=25)
+btn2B = Button(root, text="Jumbo Pack (2 Wins)", fg="blue", command=lambda: display(6), height=2, width=25)
+btn4 = Button(root, text="Single Card", fg="black", command=lambda: display(7), height=2, width=25)
 
 # Arranges Buttons at the bottom of the window
 btn1.place(x=50, y=550)

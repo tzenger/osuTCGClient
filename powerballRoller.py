@@ -4,7 +4,7 @@ from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
 from random import shuffle
-import pygame
+from sfx import *
 
 # Create root window (Manager Window)
 root = Tk()
@@ -23,19 +23,6 @@ root.pack(fill = "both", expand = True)
 
 # Display background
 root.create_image(0, 0, image = bg, anchor = "nw")
-
-# Sound Stuff
-pygame.mixer.init()
-def randomizeSound():
-    pygame.mixer.music.load("assets/randomizeSound.mp3")
-    pygame.mixer.music.play(loops=0)
-def losingSound():
-    pygame.mixer.music.load("assets/losingSound.mp3")
-    pygame.mixer.music.play(loops=0)
-def winningSound():
-    pygame.mixer.music.load("assets/winningSound.mp3")
-    pygame.mixer.music.play(loops=0)
-
 
 
 inputtxt = Text(root, height = 1, width = 7, relief = "sunken")
