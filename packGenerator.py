@@ -87,20 +87,12 @@ def loop(rollType):
     # Run specific pack roll for rollType
     match rollType:
         case 0:
-            Mini(0)
+            Mini(int(spWins.get()))
         case 1:
-            Jumbo(0)
+            Jumbo(int(spWins.get()))
         case 2:
             Mega()
         case 3:
-            Mini(1)
-        case 4:
-            Jumbo(1)
-        case 5:
-            Mini(2)
-        case 6:
-            Jumbo(2)
-        case 7:
             Single()
 
     if continueLoop == 0:
@@ -253,21 +245,22 @@ def Single():
 btn1 = Button(root, text="Mini Pack", fg="green", command=lambda: display(0), height=2, width=25)
 btn2 = Button(root, text="Jumbo Pack", fg="blue", command=lambda: display(1), height=2, width=25)
 btn3 = Button(root, text="Mega Pack", fg="red", command=lambda: display(2), height=2, width=25)
-btn1A = Button(root, text="Mini Pack (1 Win)", fg="green", command=lambda: display(3), height=2, width=25)
-btn2A = Button(root, text="Jumbo Pack (1 Win)", fg="blue", command=lambda: display(4), height=2, width=25)
-btn1B = Button(root, text="Mini Pack (2 Wins)", fg="green", command=lambda: display(5), height=2, width=25)
-btn2B = Button(root, text="Jumbo Pack (2 Wins)", fg="blue", command=lambda: display(6), height=2, width=25)
-btn4 = Button(root, text="Single Card", fg="black", command=lambda: display(7), height=2, width=25)
+btn4 = Button(root, text="Single Card", fg="black", command=lambda: display(3), height=2, width=25)
 
 # Arranges Buttons at the bottom of the window
 btn1.place(x=50, y=550)
 btn2.place(x=250, y=550)
-btn3.place(x=450, y=550)
-btn1A.place(x=50, y=600)
-btn2A.place(x=250, y=600)
-btn4.place(x=450, y=600)
-btn1B.place(x=50, y=650)
-btn2B.place(x=250, y=650)
+btn3.place(x=50, y=600)
+btn4.place(x=250, y=600)
+
+
+maxSpinboxValue = 6
+
+spWins = Spinbox(root, from_= 0, to = maxSpinboxValue, width = 3, wrap = True)
+spWins.place(x=50, y=675)
+
+rtWinsLabel = Label(root, text="# RT Wins", font=('Comic Sans MS', 10))
+rtWinsLabel.place(x=50, y=650)
 
 # Display credits
 creditLabel = Label(root, text="Created By: Paka, WontonSauce, idiot stick, Soulice", font=('Comic Sans MS', 12))
