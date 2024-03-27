@@ -31,15 +31,15 @@ def checkHolo(packType, wins):
     if(packType == 0):
         return random.randint(1, 101) < (8 * (wins+1))
     elif(packType == 1):
-        return random.randint(1, 101) < (8 * (wins+1))
+        return random.randint(1, 101) < (12 * (wins+1))
     else:
-        return random.randint(1, 101) < (16 * (wins+1))
+        return random.randint(1, 101) < (24 * (wins+1))
 
 def checkPoly(packType, wins):
     if(packType == 0):
         return random.randint(1, 101) < (2 * (wins+1))
     elif(packType == 1):
-        return random.randint(1, 101) < (2 * (wins+1))
+        return random.randint(1, 101) < (3 * (wins+1))
     else:
         return random.randint(1, 101) < (6 * (wins+1))
     
